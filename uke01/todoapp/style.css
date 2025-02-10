@@ -1,127 +1,134 @@
 body {
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto";
-    font-size: 22px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  font-size: 22px;
 
-    * {
-        box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  main {
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
+    .form-container,
+    .output-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
 
-    *:focus {
-        outline: none;
-    }
+      form {
+        display: flex;
+        background-color: aquamarine;
+        width: 100%;
 
-    main {
-        width: 60%;
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        input {
+          width: 100%;
+          padding: 10px;
+          border: #007bff solid 1px;
+          border-right: none;
+          border-radius: 5px 0 0 5px;
+          font-size: 16px;
         }
-        .form-container,
-        .output-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
 
-            form {
-                display: flex;
-                background-color: aquamarine;
-                width: 100%;
+        button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #fff;
+          border-radius: 0 5px 5px 0;
+          font-size: 16px;
+          border: #007bff solid 1px;
+          border-left: none;
+          cursor: pointer;
 
-                input {
-                    width: 100%;
-                    padding: 10px;
-                    border: #007bff solid 1px;
-                    border-right: none;
-                    border-radius: 5px 0 0 5px;
-                    font-size: 16px;
-                }
-
-                button {
-                    padding: 10px 20px;
-                    background-color: #007bff;
-                    color: #fff;
-                    border-radius: 0 5px 5px 0;
-                    font-size: 16px;
-                    border: #007bff solid 1px;
-                    border-left: none;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: #0056b3;
-                    }
-                }
-            }
-            .todo-list {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                margin-bottom: 20px;
-                list-style: none;
-                padding: 0%;
-
-                li {
-                    display: flex;
-                    border-radius: 5px;
-                    align-items: center;
-
-                    .task.text {
-                        flex: 1;
-                        padding: 10px;
-                        font-size: 18px;
-                    }
-
-                    button {
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        border: none;
-                        cursor: pointer;
-                        font-size: 18px;
-
-                        &.task.delete {
-                            color: #dc3545;
-                            background: none;
-                            border: white solid 1px;
-                            &:hover {
-                                border-color: #dc3545;
-                            }
-                        }
-
-                        &.task.complete {
-                            color: #28a745;
-                            border: white solid 1px;
-                            background: none;
-                        }
-
-                        &:hover {
-                            background-color: #c82333;
-                            &:hover {
-                                border-color: #28a745;
-                            }
-                        }
-                    }
-                }
-            }
+          &:hover {
+            background-color: #0056b3;
+          }
         }
+      }
+      .todo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        list-style: none;
+        padding: 0%;
+
+        li {
+          display: flex;
+          border-radius: 5px;
+          align-items: center;
+
+          .task.text {
+            flex: 1;
+            padding: 10px;
+            font-size: 18px;
+
+            /* lagt til css her for strikethrough som indikerer at task er gjennomført*/
+            &.completed {
+              text-decoration: line-through;
+              color: grey;
+              opacity: 0.6;
+            }
+          }
+
+          button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+
+            &.task.delete {
+              color: #dc3545;
+              background: none;
+              border: white solid 1px;
+              &:hover {
+                border-color: #dc3545;
+              }
+            }
+
+            &.task.complete {
+              color: #28a745;
+              border: white solid 1px;
+              background: none;
+            }
+
+            &:hover {
+              background-color: #c82333;
+              &:hover {
+                border-color: #28a745;
+              }
+            }
+          }
+        }
+      }
     }
+  }
 }

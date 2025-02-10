@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Todo App</title>
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css?family=Roboto"
-            rel="stylesheet"
-        />
-        <script src="index.js" defer></script>
-    </head>
-    <body>
-        <main>
-            <section class="title">TODOAPP</section>
-            <section class="form-container">
-                <form id="form">
-                    <input
-                        type="text"
-                        id="task-input"
-                        placeholder="Enter a task"
-                    />
-                    <button id="add-task-btn">+</button>
-                </form>
-            </section>
-            <section class="output-container">
-                <ul class="todo-list" id="task-list">
-                    <li class="todo-item">
-                        <span class="task text">This is a todo</span>
-                        <button class="task complete">
-                            <i class="fa fa-check"></i>
-                        </button>
-                        <button class="task delete">
-                            <i class="fa fa-trash-o"></i>
-                        </button>
-                    </li>
-                    <li class="todo-item">
-                        <span class="task text">This is a todo</span>
-                        <button class="task complete">
-                            <i class="fa fa-check"></i>
-                        </button>
-                        <button class="task delete">
-                            <i class="fa fa-trash-o"></i>
-                        </button>
-                    </li>
-                </ul>
-            </section>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet" />
+    <!--knyttet index.js inn i html filen slik at vi kan bruke funksjonene vi har laget-->
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="title">TODO APP</section>
+        <section class="form-container">
+            <form id="form">
+                <input type="text" id="task-input"
+                    placeholder="Enter a task" required />
+                <button type="submit"
+                    id="add-task-btn">+</button>
+            </form>
+        </section>
+        <section class="output-container">
+            <ul class="todo-list" id="task-list">
+                <!--fjernet <li>, denne blir nå generert i index.js sammen med <button> og <span>-->
+            </ul>
+        </section>
+    </main>
+</body>
 </html>
