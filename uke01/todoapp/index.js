@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /** deklarerer tasks variabelen. denne kjører når vi åpner siden og vil prøve å finne eksisterende "tasks" i form av objekter i ett array. om den ikke finner noen tasks vil den generere ett tomt array istedenfor. */
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  //let tasks = JSON.parse(sessionStorage.getItem("tasks")) || [];
 
   function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    //sessionStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
   /**
